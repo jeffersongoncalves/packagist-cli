@@ -1,3 +1,9 @@
+<div class="filament-hidden">
+
+![packagist-cli](https://raw.githubusercontent.com/jeffersongoncalves/packagist-cli/main/art/jeffersongoncalves-packagist-cli.png)
+
+</div>
+
 # packagist-cli
 
 A small CLI to publish and manage your Composer packages on [Packagist](https://packagist.org)
