@@ -22,10 +22,9 @@ class PackagistApiException extends RuntimeException
      */
     public static function fromResponse(int $statusCode, array $body): self
     {
-        $message = $body['status']
-            ?? $body['message']
+        $message = $body['message']
             ?? $body['error']
-            ?? 'Packagist API request failed.';
+            ?? ($statusCode === 404 ? 'Package not found.' : 'Packagist API request failed.');
 
         if (isset($body['details']) && is_string($body['details'])) {
             $message .= ' '.$body['details'];
