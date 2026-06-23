@@ -2,6 +2,10 @@
 
 All notable changes to `packagist-cli` will be documented in this file.
 
+## 1.0.2 - 2026-06-23
+
+Add the `self-update` command — update the packagist CLI to the latest release directly from the terminal.
+
 ## 1.0.1 - 2026-06-23
 
 Ship the compiled `builds/packagist` binary in the package so `composer global require` installs a working `packagist` bin. Clearer Packagist API error messages.
