@@ -2,6 +2,10 @@
 
 All notable changes to `packagist-cli` will be documented in this file.
 
+## 1.0.1 - 2026-06-23
+
+Ship the compiled `builds/packagist` binary in the package so `composer global require` installs a working `packagist` bin. Clearer Packagist API error messages.
+
 ## 1.0.0 - 2026-06-22
 
 ### Added
