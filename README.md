@@ -73,6 +73,14 @@ packagist list
 packagist info jeffersongoncalves/laravel-zero-support
 ```
 
+### `show` — list every published version
+
+```bash
+packagist show jeffersongoncalves/filament-ban
+# limit the number of versions shown
+packagist show jeffersongoncalves/filament-ban --limit=10
+```
+
 ## Development
 
 ```bash
