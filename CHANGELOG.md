@@ -2,6 +2,17 @@
 
 All notable changes to `packagist-cli` will be documented in this file.
 
+## 1.1.0 - 2026-06-24
+
+### What's new
+
+- **`show` command** — list every published version/tag of a package returned by the Packagist API, with release date, PHP requirement and license. Supports `--limit` to cap the number of rows.
+
+```bash
+packagist show jeffersongoncalves/filament-ban
+packagist show jeffersongoncalves/filament-ban --limit=10
+
+```
 ## 1.0.2 - 2026-06-23
 
 Add the `self-update` command — update the packagist CLI to the latest release directly from the terminal.
