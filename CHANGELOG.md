@@ -2,6 +2,12 @@
 
 All notable changes to `packagist-cli` will be documented in this file.
 
+## 1.1.1 - 2026-06-28
+
+### Fixed
+
+- **`submit` / API errors** — the Packagist API can return error bodies whose `message`, `error` or `details` fields are arrays (e.g. field validation errors). Building the exception message used to cast those arrays to a string, raising `Array to string conversion` and masking the real API error. Array payloads are now serialized to JSON so the actual Packagist error is shown.
+
 ## 1.1.0 - 2026-06-24
 
 ### What's new
@@ -11,6 +17,7 @@ All notable changes to `packagist-cli` will be documented in this file.
 ```bash
 packagist show jeffersongoncalves/filament-ban
 packagist show jeffersongoncalves/filament-ban --limit=10
+
 
 ```
 ## 1.0.2 - 2026-06-23
