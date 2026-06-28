@@ -26,10 +26,26 @@ class PackagistApiException extends RuntimeException
             ?? $body['error']
             ?? ($statusCode === 404 ? 'Package not found.' : 'Packagist API request failed.');
 
-        if (isset($body['details']) && is_string($body['details'])) {
-            $message .= ' '.$body['details'];
+        $message = self::stringify($message);
+
+        if (isset($body['details'])) {
+            $message .= ' '.self::stringify($body['details']);
         }
 
-        return new self((string) $message, $statusCode, $body);
+        return new self($message, $statusCode, $body);
+    }
+
+    /**
+     * Flatten an API payload value (string or array) into a readable message.
+     *
+     * @param  mixed  $value
+     */
+    private static function stringify($value): string
+    {
+        if (is_array($value)) {
+            return (string) json_encode($value, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        }
+
+        return (string) $value;
     }
 }
