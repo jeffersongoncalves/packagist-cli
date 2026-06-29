@@ -2,6 +2,10 @@
 
 All notable changes to `packagist-cli` will be documented in this file.
 
+## 1.1.3 - 2026-06-29T14:41:35Z
+
+**Full Changelog**: https://github.com/jeffersongoncalves/packagist-cli/compare/1.1.2...1.1.3
+
 ## 1.1.2 - 2026-06-29
 
 ### Security
@@ -23,6 +27,7 @@ All notable changes to `packagist-cli` will be documented in this file.
 ```bash
 packagist show jeffersongoncalves/filament-ban
 packagist show jeffersongoncalves/filament-ban --limit=10
+
 
 
 
