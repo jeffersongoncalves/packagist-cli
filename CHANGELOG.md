@@ -2,6 +2,12 @@
 
 All notable changes to `packagist-cli` will be documented in this file.
 
+## 1.1.2 - 2026-06-29
+
+### Security
+
+- Redact the `apiToken` from error output. A cURL/connection failure used to surface Guzzle's raw exception message, which embeds the full request URL including the authentication token. The token is now masked (`apiToken=***`) before any error is shown. If you ran a failing `submit`/`update` on an earlier version, rotate your token at packagist.org → Profile → API Token.
+
 ## 1.1.1 - 2026-06-28
 
 ### Fixed
@@ -17,6 +23,7 @@ All notable changes to `packagist-cli` will be documented in this file.
 ```bash
 packagist show jeffersongoncalves/filament-ban
 packagist show jeffersongoncalves/filament-ban --limit=10
+
 
 
 ```
