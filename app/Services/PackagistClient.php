@@ -99,7 +99,7 @@ class PackagistClient
                 is_array($body) ? $body : []
             );
         } catch (GuzzleException $e) {
-            throw new PackagistApiException('Packagist request failed: '.$e->getMessage());
+            throw new PackagistApiException('Packagist request failed: '.self::redact($e->getMessage()));
         }
 
         $data = json_decode((string) $response->getBody(), true);
@@ -131,11 +131,19 @@ class PackagistClient
                 is_array($body) ? $body : []
             );
         } catch (GuzzleException $e) {
-            throw new PackagistApiException('Packagist request failed: '.$e->getMessage());
+            throw new PackagistApiException('Packagist request failed: '.self::redact($e->getMessage()));
         }
 
         $data = json_decode((string) $response->getBody(), true);
 
         return is_array($data) ? $data : [];
+    }
+
+    /**
+     * Mask the apiToken query parameter so credentials never leak into error messages.
+     */
+    private static function redact(string $message): string
+    {
+        return (string) preg_replace('/(apiToken=)[^&\s]+/i', '$1***', $message);
     }
 }
