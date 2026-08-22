@@ -73,13 +73,11 @@ jobs:
             echo "__NOTES_EOF__"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Update CHANGELOG
-        uses: stefanzweifel/changelog-updater-action@a938690fad7edf25368f37e43a1ed1b34303eb36 # v1
+      - name: Generate CHANGELOG.md
+        uses: orhun/git-cliff-action@f50e11560dce63f7c33227798f90b924471a88b5 # v4.8.0
         with:
-          release-date: ${{ github.event.repository.updated_at }}
-          release-notes: ${{ steps.notes.outputs.body }}
-          latest-version: ${{ env.VERSION }}
-          compare-url-target-revision: main
+          config: cliff.toml
+          args: --tag ${{ env.VERSION }} -o CHANGELOG.md
 
       # Single commit: binary + version + changelog. The tag points here.
       - name: Commit, tag and push
