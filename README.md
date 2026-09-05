@@ -15,6 +15,14 @@ have published. It stores your Packagist API token locally in `~/.config/packagi
 
 Built with [Laravel Zero](https://laravel-zero.com).
 
+<p align="center">
+  <a href="https://github.com/jeffersongoncalves/packagist-cli/actions"><img src="https://github.com/jeffersongoncalves/packagist-cli/actions/workflows/run-tests.yml/badge.svg" alt="Tests" /></a>
+  <a href="https://github.com/jeffersongoncalves/packagist-cli/actions"><img src="https://github.com/jeffersongoncalves/packagist-cli/actions/workflows/build.yml/badge.svg" alt="Build" /></a>
+  <a href="https://packagist.org/packages/jeffersongoncalves/packagist-cli"><img src="https://img.shields.io/packagist/dt/jeffersongoncalves/packagist-cli" alt="Total Downloads" /></a>
+  <a href="https://github.com/jeffersongoncalves/packagist-cli/blob/main/LICENSE"><img src="https://img.shields.io/github/license/jeffersongoncalves/packagist-cli" alt="License" /></a>
+  <img src="https://img.shields.io/badge/php-%3E%3D8.2-8892BF" alt="PHP 8.2+" />
+</p>
+
 ## Installation
 
 ```bash
